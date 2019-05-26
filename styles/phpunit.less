@@ -1,18 +1,19 @@
+// Get the variable list in the Styleguide (Ctrl+shift+G)
 // The ui-variables file is provided by base themes provided by Atom.
-//
-// See https://github.com/atom/atom-dark-ui/blob/master/stylesheets/ui-variables.less
-// for a full listing of what's available.
 @import "ui-variables";
 
-.phpunit {
-}
-
 .phpunit-container {
-  color: white;
+  color: @text-color;
   max-height: 250px;
+  background-color: @app-background-color;
   overflow: scroll;
   padding: 10px;
   border-top: 1px solid #ccc;
+}
+
+.phpunit-container .btn-toolbar {
+    position: absolute;
+    right: 20px;
 }
 
 .phpunit-container a {

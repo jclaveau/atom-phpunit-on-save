@@ -6,14 +6,15 @@ class PHPUnitView extends View
     # Internal: Build up the HTML contents for the fragment.
     @content: ->
         @div class: 'phpunit-container', outlet: 'container', =>
-            @button click: 'close', class: 'btn btn-default pull-right', =>
-                @span class: 'icon icon-x'
-            @button click: 'clear', class: 'btn btn-default pull-right', =>
-                @span class: 'icon icon-trashcan'
-            @button click: 'kill', class: 'btn btn-default pull-right', outlet: 'buttonKill', disabled: true, =>
-                @span class: 'icon icon-zap'
-            @button click: 'copy', class: 'btn btn-default pull-right', =>
-                @span class: 'icon icon-clippy'
+            @div class: 'btn-toolbar', outlet: 'container', =>
+                @button click: 'copy', class: 'btn btn-default', =>
+                    @span class: 'icon icon-clippy'
+                @button click: 'kill', class: 'btn btn-default', outlet: 'buttonKill', disabled: true, =>
+                    @span class: 'icon icon-zap'
+                @button click: 'clear', class: 'btn btn-default', =>
+                    @span class: 'icon icon-trashcan'
+                @button click: 'close', class: 'btn btn-default', =>
+                    @span class: 'icon icon-x'
             @div class: 'phpunit-contents', outlet: 'output'
 
     close: ->
